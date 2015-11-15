@@ -1,11 +1,13 @@
-Koodishop
 Koodishop is an online ecommerce based application created using rails framework.
+
+![Logo](/app/assets/images/koodilogo.png)
 
  SYSTEM DEPENDENCIES
 
+ 	rails ~> '4.2.4'
 
 
-  CONFIGURATION
+ CONFIGURATION
 
 	Get started in three easy steps:
 
@@ -13,11 +15,11 @@ Koodishop is an online ecommerce based application created using rails framework
 
 	Then install the gems by running:
 
-	$ bundle install
+	$ bin/bundle install
 
 	Once the installation has finished, run the app:
 
-	$ rails server
+	$ bin/rails server
 
 	and open your browser at http://127.0.0.1/3000.
 
