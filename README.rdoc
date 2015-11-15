@@ -1,28 +1,37 @@
-== README
+Koodishop
+Koodishop is an online ecommerce based application created using rails framework.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ SYSTEM DEPENDENCIES
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+  CONFIGURATION
+
+	Get started in three easy steps:
+
+	$ git clone https://github.com/OracleInc/Koodishop
+
+	Then install the gems by running:
+
+	$ bundle install
+
+	Once the installation has finished, run the app:
+
+	$ rails server
+
+	and open your browser at http://127.0.0.1/3000.
+
+
+* DATABASE CREATION
+
+
+
+* RUNNING TEST SUITE
+
+* SERVICES (job queues, cache servers, search engines, etc.)
+
+* DEPLOYMENT INSTRUCTIONS
+
+
+
+
