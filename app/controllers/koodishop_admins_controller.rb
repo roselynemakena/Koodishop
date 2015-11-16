@@ -1,0 +1,2 @@
+class KoodishopAdminsController < ApplicationController
+end

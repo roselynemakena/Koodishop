@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
+  get 'shops/index'
+
+  get 'landing/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'landing#index'
 
+  resources :koodishop_admins
+  resources :shops do
+    resources :products
+   end
+   resources :carts
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
