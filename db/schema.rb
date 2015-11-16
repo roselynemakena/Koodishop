@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116074226) do
+ActiveRecord::Schema.define(version: 20151116102820) do
+
+  create_table "carts", force: :cascade do |t|
+    t.string   "cart_itemscart_total_price"
+    t.string   "cart_item_count"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "koodishop_admins", force: :cascade do |t|
+    t.string   "koodishop_admin_name"
+    t.string   "koodishop_admin_picture"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "product_name"
+    t.string   "product_description"
+    t.string   "product_price"
+    t.string   "product_deal_price"
+    t.string   "product_image"
+    t.string   "product_expiry_date"
+    t.string   "product_category"
+    t.string   "product_quantity"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "shop_managers", force: :cascade do |t|
     t.string   "shop_manager_name"
@@ -28,6 +55,14 @@ ActiveRecord::Schema.define(version: 20151116074226) do
     t.integer  "shopper_latitude"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string   "shop_name"
+    t.string   "shop_logo"
+    t.string   "shop_location"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "vouchers", force: :cascade do |t|
