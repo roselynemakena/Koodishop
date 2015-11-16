@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
+
   create_table "carts", force: :cascade do |t|
     t.string   "cart_itemscart_total_price"
     t.string   "cart_item_count"
@@ -26,7 +27,8 @@
     t.datetime "updated_at",              null: false
   end
 
-  create_table "product_names", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
+    t.string   "product_name"
     t.string   "product_description"
     t.string   "product_price"
     t.string   "product_deal_price"
@@ -34,6 +36,10 @@
     t.string   "product_expiry_date"
     t.string   "product_category"
     t.string   "product_quantity"
+
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "shop_managers", force: :cascade do |t|
     t.string   "shop_manager_name"
@@ -52,6 +58,7 @@
     t.datetime "updated_at",           null: false
   end
 
+<<<<<<< HEAD
   create_table "vouchers", force: :cascade do |t|
     t.string   "voucher_owner"
     t.integer  "voucher_items"
@@ -79,6 +86,15 @@
     t.string   "shop_location"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+
+  create_table "vouchers", force: :cascade do |t|
+    t.string   "voucher_owner"
+    t.integer  "voucher_items"
+    t.datetime "voucher_expiry_date"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end
