@@ -1,0 +1,2 @@
+class ShopperController < ApplicationController
+end

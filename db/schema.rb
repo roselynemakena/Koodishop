@@ -27,18 +27,6 @@ ActiveRecord::Schema.define(version: 20151116102820) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "product_names", force: :cascade do |t|
-    t.string   "product_description"
-    t.string   "product_price"
-    t.string   "product_deal_price"
-    t.string   "product_image"
-    t.string   "product_expiry_date"
-    t.string   "product_category"
-    t.string   "product_quantity"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.string   "product_description"
@@ -52,12 +40,37 @@ ActiveRecord::Schema.define(version: 20151116102820) do
     t.datetime "updated_at",          null: false
   end
 
+  create_table "shop_managers", force: :cascade do |t|
+    t.string   "shop_manager_name"
+    t.string   "shop_manager_picture"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "shoppers", force: :cascade do |t|
+    t.string   "shopper_name"
+    t.string   "shopper_email"
+    t.string   "shopper_phone_number"
+    t.integer  "shopper_longitude"
+    t.integer  "shopper_latitude"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
   create_table "shops", force: :cascade do |t|
     t.string   "shop_name"
     t.string   "shop_logo"
     t.string   "shop_location"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "vouchers", force: :cascade do |t|
+    t.string   "voucher_owner"
+    t.integer  "voucher_items"
+    t.datetime "voucher_expiry_date"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end
