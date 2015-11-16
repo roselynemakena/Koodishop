@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'shops/index'
 
   get 'landing/index'
@@ -63,4 +64,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+=======
+  resources :shop_manager
+  resources :shopper
+  resources :voucher
+>>>>>>> 7fe1b09ead103c6a9716211151481d51c0246c63
 end

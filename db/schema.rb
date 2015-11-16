@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151116102820) do
 
   create_table "carts", force: :cascade do |t|
@@ -35,10 +36,36 @@ ActiveRecord::Schema.define(version: 20151116102820) do
     t.string   "product_expiry_date"
     t.string   "product_category"
     t.string   "product_quantity"
+=======
+ActiveRecord::Schema.define(version: 20151116074226) do
+
+  create_table "shop_managers", force: :cascade do |t|
+    t.string   "shop_manager_name"
+    t.string   "shop_manager_picture"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "shoppers", force: :cascade do |t|
+    t.string   "shopper_name"
+    t.string   "shopper_email"
+    t.string   "shopper_phone_number"
+    t.integer  "shopper_longitude"
+    t.integer  "shopper_latitude"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "vouchers", force: :cascade do |t|
+    t.string   "voucher_owner"
+    t.integer  "voucher_items"
+    t.datetime "voucher_expiry_date"
+>>>>>>> 7fe1b09ead103c6a9716211151481d51c0246c63
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
 
+<<<<<<< HEAD
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.string   "product_description"
@@ -60,4 +87,6 @@ ActiveRecord::Schema.define(version: 20151116102820) do
     t.datetime "updated_at",    null: false
   end
 
+=======
+>>>>>>> 7fe1b09ead103c6a9716211151481d51c0246c63
 end
