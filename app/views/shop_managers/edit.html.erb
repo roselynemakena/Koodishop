@@ -1,0 +1,17 @@
+
+<div class="col-md-6 col-md-offset-3">
+	<h1>Update Shop Manager Profile</h1>
+	<%= form_for @shop_manager do |f| %>
+	<div class="form-group">
+		<%= f.label "Name " %>
+		<%= f.text_field :shop_manager_name, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= f.label "Picture " %>
+		<%= f.text_field :shop_manager_picture, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= f.button 'Save', class: 'btn btn-positive' %>
+	</div>
+	<% end %>
+</div>

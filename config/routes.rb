@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :shop_manager
-  resources :shopper
-  resources :voucher
+  resources :shop_managers
+  resources :shoppers
+  resources :vouchers
 
   get 'shops/index'
 
