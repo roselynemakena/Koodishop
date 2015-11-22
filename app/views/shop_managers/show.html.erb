@@ -1,0 +1,5 @@
+
+<h1><%= @shop_manager.shop_manager_name %></h1>
+<%= @shop_manager.shop_manager_picture %>
+<%= button_to 'Edit', edit_shop_manager_path(@shop_manager), class: 'btn btn-warning', method: "get" %>
+<%= button_to 'Delete', shop_manager_path(@shop_manager), class: 'btn btn-danger', method: "delete", data: { confirm: "You sure?" } %>

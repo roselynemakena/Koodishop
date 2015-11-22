@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
-  devise_for :koodishop_admins
-  resources :shop_manager
-  resources :shopper
-  resources :voucher
+
 
   get 'shops/index'
 
