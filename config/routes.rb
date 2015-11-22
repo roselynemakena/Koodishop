@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :shop_managers
-  resources :shoppers
-  resources :vouchers
+
+  devise_for :users
+
 
   get 'shops/index'
 
@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     resources :products
    end
    resources :carts
+
+   get 'admin' => 'koodishop_admins/sign_in', as: 'koodishop_a'
+   get 'students' => 'users#student', as: "user_student" 
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
