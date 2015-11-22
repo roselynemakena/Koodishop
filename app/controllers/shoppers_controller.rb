@@ -1,5 +1,5 @@
 class ShoppersController < ApplicationController
-	def new
+	def dashboard
 	end
 	def create
 	end
