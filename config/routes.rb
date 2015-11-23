@@ -20,8 +20,8 @@ Rails.application.routes.draw do
    end
    resources :carts
 
-   get 'admin' => 'koodishop_admins/sign_in', as: 'koodishop_a'
-   get 'students' => 'users#student', as: "user_student" 
+   get 'dashboard' => 'shop_managers#dashboard', as: 'shop_managers_dashboard'
+   get 'products' => 'products#listing', as: "products_listing"
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -8,9 +8,9 @@ def after_sign_in_path_for(resource)
 
    if current_user.admin == true
   		#flash[:error] = "Welcome Admin"
-  		admin_dashboard_path(current_user)
+  		shop_managers_dashboard_path(current_user)
   	else
-  		user_dashboard_path(current_user)
+  		products_listing_path(current_user)
   	end
   end
 
