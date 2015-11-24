@@ -3,13 +3,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-def after_sign_in_path_for(resource)
-   #user_dashboard_path(current_user)
-   if current_user.admin == true
-  		#flash[:error] = "Welcome Admin"
-  		shop_managers_dashboard_path(current_user)
-  	else
-  		products_listing_path(current_user)
-  	end
+  def after_sign_in_path_for(resource)
+    #user_dashboard_path(current_user)
+
+    if current_user.admin == true
+      #flash[:error] = "Welcome Admin"
+      shop_managers_dashboard_path(current_user)
+      else
+      products_listing_path(current_user)
+    end
+
   end
+
 end

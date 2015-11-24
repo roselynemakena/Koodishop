@@ -1,25 +1,12 @@
-<<<<<<< HEAD
 * KOODISHOP
 
-Koodishop is an online ecommerce based application created using rails framework.
-
-* SYSTEM DEPENDENCIES
-=======
 Koodishop is an online ecommerce based application created using rails framework.
 
 ![Logo](/app/assets/images/koodilogo.png)
 
  SYSTEM DEPENDENCIES
->>>>>>> d57d079b44c855ca7d2d307e69babac90a5fb7b4
 
  	rails ~> '4.2.4'
-
-
-<<<<<<< HEAD
-* CONFIGURATION
-=======
- CONFIGURATION
->>>>>>> d57d079b44c855ca7d2d307e69babac90a5fb7b4
 
 	Get started in three easy steps:
 

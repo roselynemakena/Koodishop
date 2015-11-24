@@ -1,36 +1,31 @@
 class ShopManagersController < ApplicationController
-	def dashboard
-	end
-	def new
-		# @shop_manager = ShopManager.new
-	end
 
-	def create
-	end
+  def dashboard
+  end
 
-	def show
-		# @shop_manager = ShopManager.find(params[:id])
-	end
+  def new
+  end
 
-	def edit
-		# @shop_manager = ShopManager.find(params[:id])
-	end
+  def create
+  end
 
-	def destroy
-		
-	end
+  def show
+  end
 
-	def update
-	
-	end
+  def edit
+  end
 
-	private
+  def destroy
+  end
 
-		def shop_manager_params
-			params.require(:shop_manager).permit(
-				:shop_manager_name,
-				:shop_manager_picture
-				)
-				
-		end
+  def update
+  end
+
+  private
+    def shop_manager_params
+      params.require(:shop_manager).permit(
+      :shop_manager_name,
+      :shop_manager_picture
+      )
+    end
 end
