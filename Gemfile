@@ -3,8 +3,16 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+#use sqlite 3 development
+group :development, :test do
+  gem 'sqlite3'
+end
+#Use postgres fro production
+group :production do
+  gem 'pg'
+end
+
 # Use bootsrap for styling
 gem 'bootstrap-sass', '~> 3.3.5'
 # Use SCSS for stylesheets
