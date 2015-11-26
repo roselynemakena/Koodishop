@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   get 'shops/index'
   get 'landing/index'
   root 'landing#index'
-  resources :koodishop_admins
 
+  resources :koodishop_admins
   resources :shops do
     resources :products
+    resources :shop_managers
   end
 
   resources :carts

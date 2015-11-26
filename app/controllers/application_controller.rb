@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       #flash[:error] = "Welcome Admin"
       shop_managers_dashboard_path(current_user)
       else
-      products_listing_path(current_user)
+      landing_index_path(current_user)
     end
 
   end

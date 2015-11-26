@@ -4,16 +4,9 @@
 
 
 .landing{
-
-	background: url("trolley.jpg") no-repeat center center fixed;
-	width: 100%;
-	height: 200px;
-
-
+  height: 400px;
+  background: url("/assets/trolley.jpg") no-repeat;
+  background-size: cover;
 }
 
-footer{
-	
-	background-color: grey; 
 
-}

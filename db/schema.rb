@@ -20,38 +20,6 @@ ActiveRecord::Schema.define(version: 20151122145828) do
     t.datetime "updated_at",                 null: false
   end
 
-  create_table "koodishop_admins", force: :cascade do |t|
-    t.string   "koodishop_admin_name"
-    t.string   "koodishop_admin_picture"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
-    t.string   "email",                   default: "", null: false
-    t.string   "encrypted_password",      default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",           default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-  end
-
-  add_index "koodishop_admins", ["email"], name: "index_koodishop_admins_on_email", unique: true
-  add_index "koodishop_admins", ["reset_password_token"], name: "index_koodishop_admins_on_reset_password_token", unique: true
-
-  create_table "product_names", force: :cascade do |t|
-    t.string   "product_description"
-    t.string   "product_price"
-    t.string   "product_deal_price"
-    t.string   "product_image"
-    t.string   "product_expiry_date"
-    t.string   "product_category"
-    t.string   "product_quantity"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.string   "product_description"
@@ -78,9 +46,12 @@ ActiveRecord::Schema.define(version: 20151122145828) do
     t.string   "shopper_phone_number"
     t.integer  "shopper_longitude"
     t.integer  "shopper_latitude"
+    t.integer  "voucher_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  add_index "shoppers", ["voucher_id"], name: "index_shoppers_on_voucher_id"
 
   create_table "shops", force: :cascade do |t|
     t.string   "shop_name"
@@ -91,19 +62,19 @@ ActiveRecord::Schema.define(version: 20151122145828) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.boolean  "admin"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
