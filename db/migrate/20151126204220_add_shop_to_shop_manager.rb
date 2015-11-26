@@ -1,5 +1,5 @@
 class AddShopToShopManager < ActiveRecord::Migration
   def change
-    add_column :shop_managers, :boolean, :string
+    add_reference :shop_managers, :shop, index: true, foreign_key: true
   end
 end
