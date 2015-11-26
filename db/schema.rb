@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126204220) do
+ActiveRecord::Schema.define(version: 20151126215412) do
 
   create_table "carts", force: :cascade do |t|
     t.string   "cart_itemscart_total_price"
     t.string   "cart_item_count"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "shopper_id"
   end
+
+  add_index "carts", ["shopper_id"], name: "index_carts_on_shopper_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
@@ -31,13 +34,16 @@ ActiveRecord::Schema.define(version: 20151126204220) do
     t.string   "product_quantity"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "shop_id"
   end
+
+  add_index "products", ["shop_id"], name: "index_products_on_shop_id"
 
   create_table "shop_managers", force: :cascade do |t|
     t.string   "shop_manager_name"
-    t.string   "shop_manager_picture"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "shop_manager_email"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "shop_id"
   end
 
@@ -89,6 +95,9 @@ ActiveRecord::Schema.define(version: 20151126204220) do
     t.datetime "voucher_expiry_date"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "cart_id"
   end
+
+  add_index "vouchers", ["cart_id"], name: "index_vouchers_on_cart_id"
 
 end

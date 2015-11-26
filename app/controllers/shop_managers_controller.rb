@@ -1,8 +1,8 @@
 class ShopManagersController < ApplicationController
 
   def dashboard
-    # @shop = Shop.find_by[:shop_manager_shop]
-    # @products = shop.product.all
+    @shop = Shop.find_by_id(:shop_id)
+    @products = Product.all
   end
 
   def new
@@ -27,7 +27,8 @@ class ShopManagersController < ApplicationController
     def shop_manager_params
       params.require(:shop_manager).permit(
       :shop_manager_name,
-      :shop_manager_picture
+      :shop_manager_email,
+      :shop_id
       )
     end
 end

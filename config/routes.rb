@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   resources :koodishop_admins
+
   resources :shops do
     resources :products
     resources :shop_managers
   end
+
 
   resources :carts
   get 'dashboard' => 'shop_managers#dashboard', as: 'shop_managers_dashboard'

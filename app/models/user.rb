@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         has_one :shopper, foreign_key: 'shopper_email'
-         has_one :shop_manager, foreign_key: 'shop_manager_email'
+        belongs_to :shopper, foreign_key: 'shopper_email'
+        belongs_to :shop_manager, foreign_key: 'shop_manager_email'
 end

@@ -7,7 +7,7 @@ class Shopper < ActiveRecord::Base
                                               format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
                                                                       "Invalid email address, please check again"}
 
-  belongs_to :user
+  has_one :user, foreign_key: 'email'
   has_one :cart
   has_many :products, through: :cart
   has_one :voucher, through: :cart
