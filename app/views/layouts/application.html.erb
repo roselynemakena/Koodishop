@@ -7,47 +7,74 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav class="navbar navbar-inverse ">
-		<div class="container-fluid">
-			<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">KoodiShop</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-			<p class="navbar-text pull-right">
-			<% if user_signed_in? %>
-			  Logged in as <strong><%= current_user.email %></strong>.
-			  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-			  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-			<% else %>
-			  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-			  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-			<% end %>
-			
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/assets/koodilogo.png" height="50px"></a>
+        </div>
 
-			<form class="navbar-form navbar-right">
-			<input type="text" class="form-control" placeholder="Search...">
-			</form>
-			</div>
-		</div>
-      	</nav>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navlinks">
+            <li class="active"><a href="#">Groceries</a></li>
+            <li><a href="#about">Electronics</a></li>
+            <li><a href="#contact">Fashion</a></li>
+          </ul>
 
-<div class="container">
+          <ul class="nav navbar-nav navbar-right navlinks">
 
-	<div class="row">
+            <!-- Cart -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span> 7 - Items<span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-cart" role="menu">
+              <li>
+                <span class="item">
+                  <span class="item-left">
+                    <img src="http://lorempixel.com/50/50/" alt="" />
+                    <span class="item-info">
+                      <span>Item name</span>
+                      <span>23$</span>
+                    </span>
+                  </span>
+                  <span class="item-right">
+                    <button class="btn btn-xs btn-danger pull-right">x</button>
+                  </span>
+                </span>
+              </li>
+              <li class="divider"></li>
+              <li><a class="text-center" href="">View Cart</a></li>
+              </ul>
+            </li> <!-- Cart -->
+
+            <% if user_signed_in? %>
+            <div class="navlinks">
+               Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Edit Profile',  edit_user_registration_path %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            </div>
+            <% else %>
+            <%= render 'devise/sessions/login_form' %>
+            <!-- Login -->
+            <% end %>
+
+          </ul> <!-- Navbar-right -->
+
+        </div>
+      </div>
+    </nav>
 
 
-		<%= yield %>
-
-<p class="footer"></p>
-
-	</div>
+  </header>
+<div class="render">
+    <%= yield %>
 </div>
+
 
 </body>
 </html>

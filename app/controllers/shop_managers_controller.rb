@@ -1,6 +1,8 @@
 class ShopManagersController < ApplicationController
 
   def dashboard
+    # @shop = Shop.find_by[:shop_manager_shop]
+    # @products = shop.product.all
   end
 
   def new

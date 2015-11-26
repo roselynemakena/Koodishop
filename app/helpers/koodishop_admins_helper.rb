@@ -1,2 +1,0 @@
-module KoodishopAdminsHelper
-end
