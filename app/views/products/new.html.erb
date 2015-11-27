@@ -1,7 +1,7 @@
 
 <% content_for :dashboard do %>
 <div class="col-md-6 col-md-offset-3">
-  <h1>Add product for #Shop</h1>
+  <h1>Add product for <% @shop.shop_name %></h1>
   <%= form_for @product do |f| %>
   <%= hidden_field_tag(:shop_id, @shop_id) %>
 

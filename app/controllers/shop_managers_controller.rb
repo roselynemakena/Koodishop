@@ -1,7 +1,8 @@
 class ShopManagersController < ApplicationController
 
   def dashboard
-    @shop = Shop.find_by_id(:shop_id)
+    @shop_manager = ShopManager.find_by(shop_manager_email: current_user.email)
+    @shop = Shop.find_by_id!(@shop_manager[:shop_id])
     @products = Product.all
   end
 

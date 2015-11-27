@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
 
+
   resources :carts
   get 'dashboard' => 'shop_managers#dashboard', as: 'shop_managers_dashboard'
   get 'products' => 'products#listing', as: "products_listing"
